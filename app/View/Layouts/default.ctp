@@ -36,19 +36,33 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('script');
 	?>
 </head>
+
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-			<h1><?php echo $this->Html->link('Logout',array('controller' => 'posts', 'action' => 'logout')); ?></h1>
-			<h1><?php echo $this->Html->link('Login',array('controller' => 'posts', 'action' => 'login')); ?></h1>
 			
-		</div>
+		<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+		
+	
+			
+	</div>
+	
 		<div id="content">
-
+	
+	
+		<div  id="welcome">
+<!-- gets username function from user login -->
+				
+		
+    	<h1><?php echo $username; ?> Welcome</h1> 
+		</div>
+		
+		
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
+			
+		
 		</div>
 		<div id="footer">
 			<?php echo $this->Html->link(
@@ -57,6 +71,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 					array('target' => '_blank', 'escape' => false)
 				);
 			?>
+			
+			
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>

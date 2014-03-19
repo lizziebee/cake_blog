@@ -50,7 +50,29 @@ array('controller' => 'users', 'action' => 'view', $user['User']['id'])); ?>
     <?php unset($user); ?>
 </table>
 
+<div class="actions">
+<div id ="addpost">
 <?php echo $this->Html->link(
     'Add User',
     array('controller' => 'users', 'action' => 'add')
 ); ?>
+
+</div>
+
+<div id = "buttonlogout">
+	<h1><?php if(isset($username)) { ?>
+	<h1><?php echo $this->Html->link('Logout', array('plugin'=>null,
+			'admin'=>false, 'controller'=>'users', 'action'=>'logout'));
+		}
+
+
+  			 else   {  echo $this->Html->link('Login', array('plugin'=>null,
+			'admin'=>false, 'controller'=>'users', 'action'=>'login'));	}
+
+			 ?>
+			</h1> </h1>
+	</div>
+
+
+
+</div>

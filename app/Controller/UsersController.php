@@ -2,7 +2,7 @@
 // app/Controller/UsersController.php
 
 class UsersController extends AppController {
-
+ 	
     public function beforeFilter() {
         parent::beforeFilter();
         //this.auth(component:class of cake php) Auth has method called allow. (we can find the function of add)
@@ -10,10 +10,9 @@ class UsersController extends AppController {
         //allow people access to add,index,edit 
         //allow execute of code that there are functions here. 
         $this->Auth->allow('add','edit','delete','logout');
+        $this->set('authUser', $this->user);
     }
     
-  
-
 public function login() {
     if ($this->request->is('post')) {
         if ($this->Auth->login()) {
@@ -36,7 +35,7 @@ public function logout() {
         $this->set('users', $this->paginate());
     }
 
-	
+
     public function view($id = null) {
     //looking for the user id // model go to find id in database then give back to the view
         $this->User->id = $id;

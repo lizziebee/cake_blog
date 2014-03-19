@@ -29,11 +29,32 @@ body {
 	font-size:90%;
 	margin: 0;
 }
+
+div#buttonlogout{
+
+	padding: 30px 0px;
+
+}
+
+div#addpost{
+	padding: 10px 0px;
+}
+
+div#goback{
+margin: 0px 0px;
+
+}
+
+div#welcome{
+text-align: center;
+}
+
 a {
 	color: #003d4c;
 	text-decoration: underline;
 	font-weight: bold;
 }
+
 a:hover {
 	color: #367889;
 	text-decoration:none;
@@ -49,6 +70,8 @@ h1 {
 	background:#fff;
 	color: #003d4c;
 	font-size: 100%;
+	font-weight: bold;
+
 }
 h2 {
 	background:#fff;
@@ -124,8 +147,9 @@ div.view {
 }
 div.actions {
 	float:left;
-	width:16%;
-	padding:10px 1.5%;
+	width:auto;
+	padding:20px 1.5%;
+
 }
 div.actions h3 {
 	padding-top:0;

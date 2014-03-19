@@ -1,9 +1,26 @@
 <!-- File: /app/View/Posts/view.ctp -->
 
-<h1><?php echo h($post['Post']['title']); ?></h1>
+<div class="posts view">
+
+<p><h1>Title: <?php echo h($post['Post']['title']); ?></h1></p>
+
+<p>Created: <?php echo $post['Post']['created']; ?></p>
+
+<p>Body: <?php echo h($post['Post']['body']); ?></p>
 
 
-<p><small>Created: <?php echo $post['Post']['created']; ?></small></p>
+</div>
 
-<p><?php echo h($post['Post']['body']); ?></p>
 
+
+<div class = "actions">
+
+<div id = "goback">
+<?php echo $this->Html->link(
+    'Back to Home page',
+    array('controller' => 'posts', 'action' => 'index')
+); ?>
+
+</div>
+
+</div>

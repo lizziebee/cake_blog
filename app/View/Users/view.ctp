@@ -1,8 +1,16 @@
 <!-- File: /app/View/Users/view.ctp -->
+<div class="users view">
+<p><h1>UserName:<?php echo ($user['User']['username']); ?></h1></p>
+<p> Password:<?php echo $user['User']['password']; ?> </p>
+<p> Role: <?php echo ($user['User']['role']); ?> </p>
+<p> Created: <?php echo $user['User']['created']; ?> </p>
+</div>
 
-<h1><?php echo h($user['User']['username']); ?></h1>
+<div class = "actions">
 
-<p><small>Created: <?php echo $user['User']['created']; ?></small></p>
+<?php echo $this->Html->link(
+    'Back to Home page',
+    array('controller' => 'users', 'action' => 'index')
+); ?>
 
-<p><?php echo h($user['User']['password']); ?></p>
-<p><?php echo h($user['User']['role']); ?></p>
+</div>

@@ -33,31 +33,43 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
     //AppController inherits from Controller class from CakePHP
 
-    public $components = array( //
+    public $components = array(
+    
         'Session',
         'Auth' => array(
-            'loginRedirect' => array(
-                'controller' => 'posts',
-                'action' => 'index'
-            ),
+          'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
+        'logoutRedirect' => array(
+            'controller' => 'pages',
+            'action' => 'display',
+            'home'
+        ), 
+        'authorize' => array('Controller'),
+         // Added this line
             'logoutRedirect' => array(
                 'controller' => 'pages',
                 'action' => 'display',
                 'home'
             )
+               
         )
     );
 
-    public function beforeFilter() { /*	Allows non logged
-										in users to access index
-										and view actions on all
-										controllers */
-										
+    public function beforeFilter() {
         $this->Auth->allow('index', 'view');
+        $this->set('username', $this->_usersUsername());
+     }   
+  	    
+ 	function _usersUsername(){
+    $users_username = NULL;
+    if($this->Auth->user()){
+        $users_username = $this->Auth->user('username');
     }
-    //...
+    return $users_username;
+	}
 
-	public function isAuthorized($user) {
+
+
+    public function isAuthorized($user) {
     // Admin can access every action
     if (isset($user['role']) && $user['role'] === 'admin') {
         return true;
@@ -66,4 +78,5 @@ class AppController extends Controller {
     // Default deny
     return false;
 }
+
 }
