@@ -30,11 +30,16 @@ body {
 	margin: 0;
 }
 
-div#buttonlogout{
+.nav nav-pills{
 
-	padding: 30px 0px;
+color: #fff;
 
 }
+
+#name {
+    color:  #fff;
+}
+
 
 div#addpost{
 	padding: 10px 0px;
@@ -42,11 +47,12 @@ div#addpost{
 
 div#goback{
 margin: 0px 0px;
-
+	
 }
 
 div#welcome{
-text-align: center;
+text-align: left;
+color: #0099cc;
 }
 
 a {
@@ -65,13 +71,14 @@ a img {
 h1, h2, h3, h4 {
 	font-weight: normal;
 	margin-bottom:0.5em;
+	
 }
 h1 {
 	background:#fff;
-	color: #003d4c;
+		color :#0099cc;
 	font-size: 100%;
 	font-weight: bold;
-
+	
 }
 h2 {
 	background:#fff;
@@ -100,8 +107,12 @@ p {
 	text-align: left;
 }
 
+
+
+
 #header{
 	padding: 10px 20px;
+	background:#0099cc;
 }
 #header h1 {
 	line-height:20px;
@@ -129,8 +140,10 @@ p {
 }
 #footer {
 	clear: both;
-	padding: 6px 10px;
+	padding: 10px 20px;
 	text-align: right;
+	background: #0099cc;
+	
 }
 #header a, #footer a {
 	color: #fff;
@@ -149,7 +162,7 @@ div.actions {
 	float:left;
 	width:auto;
 	padding:20px 1.5%;
-
+	
 }
 div.actions h3 {
 	padding-top:0;
@@ -293,7 +306,7 @@ fieldset {
 	padding: 16px 10px;
 }
 fieldset legend {
-	color: #e32;
+	color:#000000;
 	font-size: 160%;
 	font-weight: bold;
 }
@@ -381,17 +394,17 @@ input[type=submit] {
 	width: auto;
 }
 form .submit input[type=submit] {
-	background:#62af56;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#76BF6B), to(#3B8230));
-	background-image: -webkit-linear-gradient(top, #76BF6B, #3B8230);
-	background-image: -moz-linear-gradient(top, #76BF6B, #3B8230);
-	border-color: #2d6324;
+	background:#0099cc;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#0099cc), to(#0099cc));
+	background-image: -webkit-linear-gradient(top,#0099cc, #0099cc);
+	background-image: -moz-linear-gradient(top, #0099cc, #0099cc);
+	border-color: #0099cc;
 	color: #fff;
 	text-shadow: rgba(0, 0, 0, 0.5) 0px -1px 0px;
 	padding: 8px 10px;
 }
 form .submit input[type=submit]:hover {
-	background: #5BA150;
+	background: #0099cc;
 }
 /* Form errors */
 form .error {
@@ -517,6 +530,7 @@ p.error em {
 .actions ul {
 	margin: 0;
 	padding: 0;
+	
 }
 .actions li {
 	margin:0 0 0.5em 0;

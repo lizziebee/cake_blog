@@ -5,6 +5,8 @@ class PostsController extends AppController {
   	public $components = array('Session');
   	
     public function index() {
+    
+   
     //finding all records in the post table and hading the response index.ctp in view 
         $this->set('posts', $this->Post->find('all'));
     }
@@ -28,15 +30,17 @@ class PostsController extends AppController {
     //checking if this http "post" request//
     //not allow people get in the database// 
         if ($this->request->is('post')) {
-		
-		 $this->request->data['Post']['user_id'] = $this->Auth->user('id'); // Adicionada essa linha
-
-		
-		
-			
+        
+         $this->request->data['Post']['user_id'] = $this->Auth->user('id');
+         
+        if ($this->Post->save($this->request->data)) {
+            $this->Session->setFlash(__('Your post has been saved.'));
+            return $this->redirect(array('action' => 'index'));
+        }
+        
+        
         //prepare my model get ready (initialasing the post model) //
-           $this->Post->create(); 
-		  
+            $this->Post->create(); 
             
             //data that come through on the form. request object post data//hading the data from form to the model
             //post model job talk to the database. // save information,request obje ct send to model 
@@ -94,20 +98,10 @@ class PostsController extends AppController {
         return $this->redirect(array('action' => 'index'));
     }
 }
-public function login() {
-    if ($this->request->is('post')) {
-        if ($this->Auth->login()) {
-            return $this->redirect($this->Auth->redirect());
-        }
-        $this->Session->setFlash(__('Invalid account specified, try again'));
-    }
-}
 
-public function logout() {
-    return $this->redirect($this->Auth->logout());
-}
-    
-   public function isAuthorized($user) {
+
+
+public function isAuthorized($user) {  //it allow login add loggin and owns in posts 
     // All registered users can add posts
     if ($this->action === 'add') {
         return true;
@@ -116,14 +110,15 @@ public function logout() {
     // The owner of a post can edit and delete it
     if (in_array($this->action, array('edit', 'delete'))) {
         $postId = $this->request->params['pass'][0];
-        if ($this->Post->isOwnedBy($postId, $user['id'])) {
+        if ($this->Post->isOwnedBy($postId, $user['id'])) {  //loggin and own edit/delete/view 
             return true;
         }
     }
 
     return parent::isAuthorized($user);
 }
-
+    
+    
     
     
 }

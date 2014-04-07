@@ -3,7 +3,15 @@
 App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 
 class User extends AppModel {
-    public $validate = array(
+
+
+public $hasMany= array (
+'Post' => array (
+'className'=> 'Post')
+
+);
+
+  public $validate = array(
         'username' => array(
             'required' => array(
                 'rule' => array('notEmpty'),
@@ -18,7 +26,7 @@ class User extends AppModel {
         ),
         'role' => array(
             'valid' => array(
-                'rule' => array('inList', array('admin', 'author','financial','hr')),
+                'rule' => array('inList', array('admin', 'author','account','hr')),
                 'message' => 'Please enter a valid role',
                 'allowEmpty' => false
             )

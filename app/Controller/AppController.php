@@ -31,7 +31,7 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-    //AppController inherits from Controller class from CakePHP
+    //...
 
     public $components = array(
     
@@ -58,7 +58,9 @@ class AppController extends Controller {
         $this->Auth->allow('index', 'view');
         $this->set('username', $this->_usersUsername());
      }   
-  	    
+  	 
+  	
+    
  	function _usersUsername(){
     $users_username = NULL;
     if($this->Auth->user()){
@@ -66,17 +68,24 @@ class AppController extends Controller {
     }
     return $users_username;
 	}
-
-
-
+	
+	
+	
     public function isAuthorized($user) {
     // Admin can access every action
     if (isset($user['role']) && $user['role'] === 'admin') {
         return true;
     }
 
-    // Default deny
+    if (isset($user['role']) && $user['role'] === 'author') {
     return false;
+    }
+    
+  
+
+
 }
+
+	
 
 }
