@@ -60,7 +60,7 @@
             ?>
             
             <td>
-                    <?php echo $post['Post']['user_id']; ?>  <!--create anothe column or table data-->
+                    <?php echo $post['Post']['user_id']; ?>  <!--create another column or table data-->
                    <!-- and pass user_id from post database-->
                    
                    

@@ -26,7 +26,7 @@ public $hasMany= array (
         ),
         'role' => array(
             'valid' => array(
-                'rule' => array('inList', array('admin', 'author','account','hr')),
+                'rule' => array('inList', array('admin', 'author','marketing','hr')),
                 'message' => 'Please enter a valid role',
                 'allowEmpty' => false
             )

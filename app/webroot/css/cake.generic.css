@@ -37,7 +37,9 @@ color: #fff;
 }
 
 #name {
-    color:  #fff;
+	font-family:"Times New Roman", Times, serif;
+    color: #FFFFCC;
+
 }
 
 
@@ -51,7 +53,7 @@ margin: 0px 0px;
 }
 
 div#welcome{
-text-align: left;
+text-align: center;
 color: #0099cc;
 }
 
@@ -112,7 +114,7 @@ p {
 
 #header{
 	padding: 10px 20px;
-	background:#0099cc;
+	background:#336699;
 }
 #header h1 {
 	line-height:20px;
@@ -125,6 +127,7 @@ p {
 	background: #003d4c;
 	font-weight: normal;
 	text-decoration: none;
+	
 }
 #header h1 a:hover {
 	color: #fff;
@@ -142,11 +145,13 @@ p {
 	clear: both;
 	padding: 10px 20px;
 	text-align: right;
-	background: #0099cc;
+	background: #336699;
 	
 }
 #header a, #footer a {
-	color: #fff;
+	font-family:"Times New Roman", Times, serif;
+	color: #FFFFCC;
+	
 }
 
 /** containers **/

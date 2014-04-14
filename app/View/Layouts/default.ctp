@@ -89,7 +89,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <!-- get username function from user login -->
 				
 		
-    	<center><h1><?php echo $username; ?> Welcome </h1> </center>
+    	<h1><?php echo $username; ?> Welcome </h1>
 		</div>
 
 		
@@ -101,7 +101,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		</div>
 		<div id="footer">
                     <div id ="name">
-                    Lizzie Cheah@ 2014 
+                    Lizzie Cheah &copy; All Rights Reserved 2014 
                     </div>
 			<!--<?php echo $this->Html->link(
 				$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
@@ -116,5 +116,3 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<!-- <?php echo $this->element('sql_dump'); ?>-->
 </body>
 </html>
-
-

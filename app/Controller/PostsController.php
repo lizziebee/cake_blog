@@ -117,9 +117,6 @@ public function isAuthorized($user) {  //it allow login add loggin and owns in p
 
     return parent::isAuthorized($user);
 }
-    
-    
-    
-    
+      
 }
 ?>
