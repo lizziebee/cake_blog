@@ -50,7 +50,7 @@ public function logout() {
     public function view($id = null) {
     //looking for the user id // model go to find id in database then give back to the view
         $this->User->id = $id;
-        //if we cant find the user then throw erro
+        //if we cant find the user then throw error
         if (!$this->User->exists()) {
             throw new NotFoundException(__('Invalid user'));
              
